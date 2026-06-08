@@ -211,8 +211,6 @@
 </head>
 <body>
 
-<div class="banner">💜 <b>Mockup · Portada V4</b> — minimal claro con tarjeta de foto. Carga la foto con el botón inferior derecho.</div>
-
 <header class="nav">
   <div class="wrap nav-in">
     <div class="logo"><span class="mk">⚖</span> Carmen Gloria Conecta</div>
@@ -398,16 +396,11 @@
   <div class="fb"><span>© 2026 Carmen Gloria Conecta — Mockup de demostración</span><span>Webpay · Mercado Pago · Stripe</span></div>
 </div></footer>
 
-<label class="uploader">📷 Cargar foto de Carmen Gloria<input id="up" type="file" accept="image/*" style="display:none"></label>
-
 <script>
   document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');}));
   document.querySelectorAll('.slot:not(.busy)').forEach(s=>s.addEventListener('click',()=>{document.querySelectorAll('.slot').forEach(x=>x.classList.remove('on'));s.classList.add('on');}));
   document.querySelectorAll('.cal .c:not(.off)').forEach(c=>c.addEventListener('click',()=>{document.querySelectorAll('.cal .c').forEach(x=>x.classList.remove('sel'));c.classList.add('sel');}));
   document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}}));
-  function applyCG(d){document.querySelectorAll('img.cg').forEach(img=>{img.onerror=null;img.src=d;});}
-  try{var saved=localStorage.getItem('cgPhoto');if(saved){applyCG(saved);}}catch(e){}
-  document.getElementById('up').addEventListener('change',function(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=function(ev){applyCG(ev.target.result);try{localStorage.setItem('cgPhoto',ev.target.result);}catch(err){alert('La foto se aplicó, pero es muy grande para recordarla al recargar. Para que quede fija, guárdala como carmen-gloria.jpg en esta carpeta.');}};r.readAsDataURL(f);});
 </script>
 </body>
 </html>
